@@ -1,2 +1,41 @@
 @import "../utilities/reset.scss";
 @import "../utilities/variable.scss";
+
+.wrapper{
+    min-height: 100vh;
+    display: flex;
+}
+
+.servers{
+    width: $servers-width;
+    background: $servers-bg;
+}
+
+.dm,
+.main{
+ .header{
+        height: $header-height;
+        box-shadow: 0 0.5px 2px rgba(0, 0, 0, 0.555);
+    }   
+}
+
+.dm{
+    width: $dm-width;
+    background-color: $dm-bg;
+    display: flex;
+    flex-direction: column;
+
+    .list{
+        flex-grow: 1;
+    }
+
+    .personal{
+        height: $dm--personal-height;
+        background-color: $dm--personal-bg;
+    }
+}
+
+.main{
+    flex-grow: 1;
+    background-color: $main-bg;
+}
