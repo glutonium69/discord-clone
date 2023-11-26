@@ -1,6 +1,6 @@
 export default function Personal() {
 
     return (
-        <div></div>
+        <div className="personal" ></div>
     );
 }

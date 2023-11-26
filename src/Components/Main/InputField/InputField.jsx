@@ -1,6 +1,6 @@
 export default function InputFeild() {
 
     return (
-        <div></div>
+        <div className="input-feild"></div>
     );
 }

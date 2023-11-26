@@ -1,6 +1,6 @@
 export default function Members() {
 
     return (
-        <div></div>
+        <div className="members" ></div>
     );
 }

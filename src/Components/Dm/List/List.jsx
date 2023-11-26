@@ -1,6 +1,6 @@
 export default function List() {
 
     return (
-        <div></div>
+        <div className="list" ></div>
     );
 }
