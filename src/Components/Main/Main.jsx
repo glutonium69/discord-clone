@@ -6,7 +6,7 @@ import Members from "./Members/Members";
 export default function Main() {
 
     return (
-        <div>
+        <div className="main" >
             <Header />
             <Chat />
             <InputField />

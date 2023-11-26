@@ -4,7 +4,7 @@ import FooterIcon from "./FooterIcons/FooterIcons"
 
 export default function Servers(){
     return(
-        <div>
+        <div className="servers" >
             <DmIcon />
             <ServerIcons />
             <FooterIcon />

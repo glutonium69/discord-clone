@@ -5,7 +5,7 @@ import Personal from "./Personal/Personal";
 export default function Dm() {
 
     return (
-        <div>
+        <div className="dm" >
             <Header />
             <List />
             <Personal />
