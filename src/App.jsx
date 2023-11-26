@@ -1,6 +1,10 @@
 function App() {
 
-  return <>Test</>;
+  return(
+    <div className="wrapper">
+        
+    </div>
+  );
 }
 
 export default App
