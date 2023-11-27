@@ -1,6 +1,6 @@
 export default function FooterIcon() {
 
     return (
-        <div></div>
+        <div className="footer-icons"></div>
     );
 }

@@ -1,6 +1,6 @@
 export default function DmIcon(){
 
     return(
-        <div></div>
+        <div className="dm-icon"></div>
     )
 }
