@@ -1,11 +1,22 @@
-$servers-width: 5%;
+$color-300: #f2f3f5;
+$color-200: #d9dcdf;
+$color-100: #848a92;
+
+$font-weight-100: 500;
+
+$servers-width: 5.5%;
 $servers-bg: #1e1f22;
 
 $dm-width: 18%;
 $dm-bg: #2b2d31;
 $dm--personal-bg: #232428;
-$dm--personal-height: 50px;
+$dm--personal-height: 52px;
+$dm--header--input-inset: 10px;
+$dm--header--input-padding-in: 0.3rem;
+$dm--header--input-border-radius: 0.25rem;
+$dm--lists-item--pfp: 32px;
+$dm--list-item-gap: 0.7rem;
 
 $main-bg: #313338;
 
-$header-height: 45px;
+$header-height: 47px;

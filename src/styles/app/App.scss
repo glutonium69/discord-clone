@@ -1,37 +1,128 @@
 @import "../utilities/reset.scss";
 @import "../utilities/variable.scss";
 
-.wrapper{
-    min-height: 100vh;
+@mixin flex($dir: null) {
     display: flex;
+
+    @if $dir != null {
+        flex-direction: column;
+    }
+}
+
+
+@mixin gridCenter{
+    display: grid;
+    place-items: center;
+}
+
+
+*,
+*::before,
+*::after{
+    font-family: 'Noto sans' !important;
+}
+
+.wrapper{
+    height: 100vh;
+    @include flex;
+    overflow: hidden;
 }
 
 .servers{
+    min-width: 70px;
     width: $servers-width;
     background: $servers-bg;
 }
 
 .dm,
 .main{
- .header{
+    .header{
         height: $header-height;
         box-shadow: 0 0.5px 2px rgba(0, 0, 0, 0.555);
     }   
 }
 
 .dm{
+    min-width: 240px;
     width: $dm-width;
     background-color: $dm-bg;
-    display: flex;
-    flex-direction: column;
+    color: $color-100;
+    @include flex(1);
+    position: relative;
+
+
+    .header{
+        @include gridCenter;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        input{
+            inset: $dm--header--input-inset;
+            border-radius: $dm--header--input-border-radius;
+            padding-inline: $dm--header--input-padding-in;
+            background-color: $servers-bg;
+            font-weight: $font-weight-100;
+            position: absolute;
+            border: none;
+            outline: transparent;
+
+            &::placeholder{
+                color: $color-100;
+            }
+        }
+    }
 
     .list{
         flex-grow: 1;
+        translate: 0 $header-height;
+        overflow: scroll;
+        @include flex(1);
+        
+        ul{
+            list-style: none;
+            // background-color: cyan;
+            padding-left: $dm--list-item-gap ;
+            gap: $dm--list-item-gap;
+            @include flex(1);
+        }
+
+        li{
+            @include flex;
+            align-items: center;
+            gap: $dm--list-item-gap;
+            padding: 0.3rem $dm--list-item-gap;
+            border-radius: $dm--header--input-border-radius;
+
+            &:hover{
+                background-color: #404249;
+                color: $color-300;
+            }
+        }
+
+        .img{
+            width: $dm--lists-item--pfp;
+            aspect-ratio: 1;
+            background: black;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     }
 
     .personal{
         height: $dm--personal-height;
         background-color: $dm--personal-bg;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
     }
 }
 
