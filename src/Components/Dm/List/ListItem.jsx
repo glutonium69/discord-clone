@@ -1,11 +1,6 @@
-export default function ListItems({icon, text, appearance}) {
+export default function ListItems({icon, text, appearance, pfp}) {
 
-    let img = (
-			<img
-				src="https://cdn.discordapp.com/avatars/492543441826349066/42c165aa65a0695ad140866b425bf9c3.webp?size=48"
-				alt=""
-			/>
-		);
+    let img = <img src={pfp} alt="" />;
 
     return (
 			<li>

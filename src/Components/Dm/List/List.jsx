@@ -38,12 +38,13 @@ const topSection = (
 
 const list = (
     <>
-        {data.map((item, idx) => (
+        {data.map(({userName, appearance, pfp, id}) => (
             <ListItem
                 icon={false}
-                text={item.userName}
-                appearance={item.appearance}
-                key={idx}
+                text={userName}
+                appearance={appearance}
+                pfp={pfp}
+                key={id}
             />
         ))}
     </>
