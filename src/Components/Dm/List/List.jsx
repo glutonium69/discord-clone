@@ -1,34 +1,11 @@
 import ListItem from "./ListItem";
+import data from "./data"
 
 export default function List() {
 
-    const randomNames = [
-        "Alice Smith",
-        "Bob Johnson",
-        "Charlie Brown",
-        "David Miller",
-        "Eva White",
-        "Frank Davis",
-        "Grace Wilson",
-        "Harry Taylor",
-        "Ivy Lee",
-        "Jack Anderson",
-        "Kim Robinson",
-        "Liam Harris",
-        "Mia Clark",
-        "Nathan Hall",
-        "Olivia King",
-        "Peter Moore",
-        "Quinn Turner",
-        "Rose Parker",
-        "Sam Evans",
-        "Tom Bennett",
-    ];
-
-
     const topSection = (
         <>
-            <ListItem icon={friendsIcon} text="Friends" />
+            <ListItem icon={friendsIcon} text="Friends" appearance={''} />
             <ListItem icon={nitroIcon} text="Nitro" />
             <ListItem icon={msgReqIcon} text="Message Requests" />
         </>
@@ -36,11 +13,18 @@ export default function List() {
 
     const list = (
         <>
-            {randomNames.map((name, idx) => (
-                <ListItem icon={false} text={name} key={idx} />
+            {data.map((item, idx) => (
+                <ListItem 
+                    icon={false} 
+                    text={item.userName}
+                    appearance={item.appearance} 
+                    key={idx} 
+                />
             ))}
         </>
     )
+
+
 
     return (
         <div className="list" >
