@@ -1,8 +1,17 @@
 import ListItem from "./ListItem";
 import data from "./data"
 import { friendsIcon, msgReqIcon, nitroIcon, addIcon } from "./Icons";
+import { useEffect } from "react";
 
 export default function List() {
+
+    useEffect(() => {
+        const list = document.querySelector(".list");
+        const header = document.querySelector(".header").getBoundingClientRect().height;
+        const personal = document.querySelector(".personal").getBoundingClientRect().height;
+
+        list.style.height = window.innerHeight - header - personal + "px";
+    },[]);
 
     return (
         <div className="list" >
