@@ -75,7 +75,8 @@ table {
   color: #848a92;
   display: flex;
   flex-direction: column;
-  position: relative; }
+  position: relative;
+  font-size: 0.9em; }
 
 .dm .header {
   display: grid;
@@ -101,39 +102,53 @@ table {
 .dm .list {
   flex-grow: 1;
   translate: 0 47px;
+  padding-block: 0.5rem;
   overflow: scroll;
   display: flex;
   flex-direction: column; }
 
 .dm .list ul {
   list-style: none;
-  padding-left: 0.7rem;
-  gap: 0.7rem;
+  padding-inline: 0.5rem;
+  gap: 0.5rem;
   display: flex;
   flex-direction: column; }
 
 .dm .list li {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
-  padding: 0.3rem 0.7rem;
+  gap: 0.5rem;
+  padding: 0.2rem 0.5rem;
   border-radius: 0.25rem; }
 
-.dm .list li:hover {
+.dm .list li:not(.noHoverEffect):hover {
   background-color: #404249;
-  color: #f2f3f5; }
+  color: #f2f3f5;
+  cursor: pointer; }
+
+.dm .list .noHoverEffect {
+  font-size: 0.85em;
+  margin-bottom: -5px; }
+
+.dm .list .noHoverEffect svg {
+  scale: 0.9;
+  margin-left: auto; }
 
 .dm .list .img {
   width: 32px;
   aspect-ratio: 1;
-  background: black;
   border-radius: 50%;
-  overflow: hidden; }
+  display: grid;
+  place-items: center; }
 
 .dm .list img {
   width: 100%;
   height: 100%;
-  object-fit: cover; }
+  object-fit: cover;
+  border-radius: 50%; }
+
+.dm .list svg {
+  height: 32px !important; }
 
 .dm .personal {
   height: 52px;
