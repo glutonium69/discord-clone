@@ -33,7 +33,6 @@
 .wrapper{
     height: 100vh;
     @include flex;
-    overflow: hidden;
 }
 
 .servers{
@@ -129,7 +128,7 @@
             }
 
             &[data-appearance="busy"]{
-                
+
                 &::before{
                     background: #ec3e42;
                 }
@@ -158,10 +157,11 @@
 
     .header{
         @include gridCenter;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
+        position: relative;
+        // top: 0;
+        // left: 0;
+        // width: 100%;
+        height: $header-height;
 
         input{
             inset: $dm--header--input-inset;
@@ -179,8 +179,6 @@
     }
 
     .list{
-        flex-grow: 1;
-        translate: 0 $header-height;
         padding-block: $dm--list-item-gap;
         overflow: scroll;
         @include flex(1);
@@ -191,7 +189,6 @@
         
         ul{
             list-style: none;
-            // background-color: cyan;
             padding-inline: $dm--list-item-gap ;
             gap: $dm--list-item-gap;
             @include flex(1);
@@ -225,10 +222,6 @@
     .personal{
         height: $dm--personal-height;
         background-color: $dm--personal-bg;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
         @include flex;
         align-items: center;
         justify-content: space-around;
