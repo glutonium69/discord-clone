@@ -36,8 +36,8 @@ export default function List() {
 
     const list = (
         <>
-            {randomNames.map(name => (
-                <ListItem icon={false} text={name}/>
+            {randomNames.map((name, idx) => (
+                <ListItem icon={false} text={name} key={idx} />
             ))}
         </>
     )
