@@ -1,12 +1,12 @@
 import DmIcon from "./DmIcon/DmIcon"
-import ServerIcons from "./ServerIcons/ServerIcons"
-import FooterIcon from "./FooterIcons/FooterIcons"
+import ServerIcon from "./ServerIcon/ServerIcon"
+import FooterIcon from "./FooterIcon/FooterIcon"
 
 export default function Servers(){
     return(
         <div className="servers" >
             <DmIcon />
-            <ServerIcons />
+            <ServerIcon />
             <FooterIcon />
         </div>
     )
