@@ -1,0 +1,21 @@
+
+@mixin flex($dir: null) {
+    display: flex;
+
+    @if $dir != null {
+        flex-direction: column;
+    }
+}
+
+
+@mixin gridCenter{
+    display: grid;
+    place-items: center;
+}
+
+
+@mixin self-center{
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
