@@ -91,7 +91,7 @@ table {
   border-radius: 0.25rem;
   padding-inline: 0.3rem;
   background-color: #1e1f22;
-  font-weight: 500;
+  font-weight: 600;
   position: absolute;
   border: none;
   outline: transparent; }
@@ -131,8 +131,9 @@ table {
   margin-bottom: -5px; }
 
 .dm .list .noHoverEffect svg {
-  scale: 0.9;
-  margin-left: auto; }
+  scale: 0.6;
+  margin-left: auto;
+  color: #f2f3f5; }
 
 .dm .list .img {
   width: 32px;
