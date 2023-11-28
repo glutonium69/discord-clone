@@ -4,9 +4,9 @@ export default function FooterIcon() {
 
     return (
         <>
-            <div className="footer-icon server-icon">{AddServer}</div>
-            <div className="footer-icon server-icon">{Explore}</div>
-            <div className="footer-icon server-icon">{DownloadApp}</div>
+            <a href="#" className="footer-icon server-icon">{AddServer}</a>
+            <a href="#" className="footer-icon server-icon">{Explore}</a>
+            <a href="#" className="footer-icon server-icon">{DownloadApp}</a>
         </>
     );
 }
