@@ -12,6 +12,104 @@
 .wrapper{
     height: 100vh;
     @include flex;
+    overflow: hidden;
+}
+
+
+.img{
+    width: $dm--lists-item--pfp;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    cursor: pointer;
+    @include gridCenter;
+    
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    
+    svg{
+        height: $dm--lists-item--pfp !important;
+    }
+} 
+
+
+.pfp{
+    position: relative;
+    
+    .appearance{
+        position: absolute;
+        bottom: 0%;
+        right: 0%;
+        isolation: isolate;
+        width: 50%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        translate: 25% 20%;
+        overflow: hidden;
+
+        &::before,
+        &::after{
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            aspect-ratio: 1;
+        }
+
+        &::before{
+            width: 10px;
+            @include self-center;
+        }
+
+        &::after{
+            width: 5px;
+            background-color: inherit;
+        }
+        
+        &[data-appearance="online"]{
+            &::before{
+                background: #23a55a;
+            }
+        }
+        
+        &[data-appearance="idle"]{
+            
+            &::before{
+                background: #f0b232;
+            }
+
+            &::after{
+                width: 9px;
+            }
+        }
+
+        &[data-appearance="busy"]{
+
+            &::before{
+                background: #ec3e42;
+            }
+
+            &::after{
+                @include self-center;
+                width: 45%;
+                height: 15%;
+                border-radius: 999vh;
+            }
+        }
+
+        &[data-appearance="offline"]{
+
+            &::before{
+                background: #80848e;
+            }
+
+            &::after{
+                @include self-center;
+            }
+        }
+    }
 }
 
 .servers{
@@ -135,7 +233,7 @@
 }
 
 .dm{
-    min-width: 240px;
+    min-width: 320px - 70px;
     width: $dm-width;
     background-color: $dm-bg;
     color: $color-200;
@@ -143,112 +241,13 @@
     position: relative;
     font-size: $font-size-300;
 
-
-    .img{
-        width: $dm--lists-item--pfp;
-        aspect-ratio: 1;
-        border-radius: 50%;
-        @include gridCenter;
-        
-        img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-        
-        svg{
-            height: $dm--lists-item--pfp !important;
-        }
-    }
-
-    
-    .pfp{
-        position: relative;
-        
-        .appearance{
-            position: absolute;
-            bottom: 0%;
-            right: 0%;
-            isolation: isolate;
-            width: 50%;
-            aspect-ratio: 1;
-            border-radius: 50%;
-            translate: 25% 20%;
-            overflow: hidden;
-
-            &::before,
-            &::after{
-                content: '';
-                position: absolute;
-                border-radius: 50%;
-                aspect-ratio: 1;
-            }
-
-            &::before{
-                width: 10px;
-                @include self-center;
-            }
-
-            &::after{
-                width: 5px;
-                background-color: inherit;
-            }
-            
-            &[data-appearance="online"]{
-                &::before{
-                    background: #23a55a;
-                }
-            }
-            
-            &[data-appearance="idle"]{
-                
-                &::before{
-                    background: #f0b232;
-                }
-
-                &::after{
-                    width: 9px;
-                }
-            }
-
-            &[data-appearance="busy"]{
-
-                &::before{
-                    background: #ec3e42;
-                }
-
-                &::after{
-                    @include self-center;
-                    width: 45%;
-                    height: 15%;
-                    border-radius: 999vh;
-                }
-            }
-
-            &[data-appearance="offline"]{
-
-                &::before{
-                    background: #80848e;
-                }
-
-                &::after{
-                    @include self-center;
-                }
-            }
-        }
-    }
-
-
     .header{
         @include gridCenter;
         position: relative;
-        // top: 0;
-        // left: 0;
-        // width: 100%;
         height: $header-height;
-
+        
         input{
+            color: $color-200;
             inset: $dm--header--input-inset;
             border-radius: $dm--header--input-border-radius;
             padding-inline: $dm--header--input-padding-in;
@@ -369,4 +368,109 @@
 .main{
     flex-grow: 1;
     background-color: $main-bg;
+
+    .img{ scale : 0.8 }
+
+    .header{
+        @include flex;
+        justify-content: space-between;
+
+        .user-info,
+        .view-name,
+        .other-name{
+            @include flex;
+            align-items: center;
+        }
+        
+        .user-info{
+            justify-content: space-between;
+            padding-inline: $dm--header--input-padding-in;
+            gap: 1rem;
+        }
+
+        .view-name,
+        .other-name{
+            gap: 0.5rem;
+        }
+
+        .username{
+            color: $color-300;
+            font-weight: $font-weight-100;
+            font-size: $font-size-300;
+        }
+
+        .aka{
+            width: fit-content;
+            color: $color-200;
+            text-transform: uppercase;
+            background-color: #2b2d31;
+            border-radius: 40%;
+            padding: 3px;
+            font-weight: $font-weight-100;
+        }
+
+        .divider{
+            width: 1px;
+            scale: 0.7;
+            opacity: 0.6;
+            align-self: stretch;
+            background: $color-100;
+        }
+
+        .other-names,
+        .aka{
+            color: $color-200;
+            font-size: $font-size-300
+        }
+
+        .accessibility{
+            justify-content: space-between;
+        }
+
+        .accessibility,
+        .input{
+            @include flex;
+            align-items: center;
+            gap: $dm--header--input-padding-in;
+        }
+
+        .input{
+            background-color: $servers-bg;
+            border-radius: $dm--header--input-border-radius;
+            height: 55%;
+
+            svg{
+                scale: 0.9;
+            }
+
+            &:hover{
+                input{ max-width: 300px }
+            }
+        }
+
+        input{
+            max-width: 130px;
+            background-color: transparent;
+            border: none;
+            outline: transparent;
+            padding-inline: $dm--header--input-padding-in;
+            color: $color-200;
+            transition: 300ms;
+        }
+
+        .img{
+            @include flex; 
+            
+            &:hover{
+                svg{
+                    color: $color-300;
+                }
+            }
+        }
+
+        svg{
+            color: $color-200;
+            scale: 1.2;
+        }
+    }
 }
