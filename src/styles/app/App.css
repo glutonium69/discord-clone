@@ -78,9 +78,16 @@ table {
   background-color: #313338;
   display: grid;
   place-items: center;
-  transition: background-color 300ms; }
+  transition: background-color 300ms, border-radius 300ms; }
+
+.servers .server-icon img {
+  border-radius: 50%;
+  transition: border-radius 300ms; }
 
 .servers .server-icon:hover {
+  border-radius: 35%; }
+
+.servers .server-icon:hover img {
   border-radius: 35%; }
 
 .servers .server-icon:hover svg {

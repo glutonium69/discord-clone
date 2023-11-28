@@ -34,10 +34,19 @@
         margin-inline: auto;
         background-color: $main-bg; 
         @include gridCenter;
-        transition: background-color 300ms;
+        transition: background-color 300ms, border-radius 300ms;
+        
+        img{
+            border-radius: 50%;
+            transition: border-radius 300ms;
+        }
 
         &:hover{
             border-radius: 35%;
+
+            img{
+                border-radius: 35%;
+            }
             
             svg{
                 color: white;
