@@ -5,6 +5,7 @@ export default function ServerIcons({icon}) {
             <a href="#" className="server-icon">
                 <img src={icon} alt="" />
             </a>
+            <div className="indicator"></div>
         </div>
     );
 }
