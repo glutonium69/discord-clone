@@ -18,6 +18,61 @@
     min-width: 70px;
     width: $servers-width;
     background: $servers-bg;
+    padding-block: $dm--header--input-inset ;
+    gap: $dm--header--input-inset;
+    overflow: scroll;
+    display: grid;
+
+    &::-webkit-scrollbar{
+        display: none;
+    }
+
+    .server-icon{
+        width: 65%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        margin-inline: auto;
+        background-color: $main-bg; 
+        @include gridCenter;
+        transition: background-color 300ms;
+
+        &:hover{
+            border-radius: 35%;
+            
+            svg{
+                color: white;
+            }
+        }
+    }
+    
+    .dm-icon{
+        &:hover{
+            background-color: #5865f2;
+        }
+    }
+
+    .footer-icon{
+
+        svg{
+            color: #23a559;
+        }
+
+        &:hover{
+            background-color: #23a559;
+        }
+    }
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    svg{
+        width: 100%;
+        color: $color-100;
+        transition: color 300ms;
+    }
 }
 
 .dm,
