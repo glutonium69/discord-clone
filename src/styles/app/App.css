@@ -70,6 +70,13 @@ table {
 .servers::-webkit-scrollbar {
   display: none; }
 
+.servers div:has(> .server-icon) {
+  position: relative; }
+
+.servers div:has(.footer-icon) {
+  display: grid;
+  gap: 0.5rem; }
+
 .servers .server-icon {
   width: 65%;
   aspect-ratio: 1;
@@ -93,6 +100,19 @@ table {
 .servers .server-icon:hover svg {
   color: white; }
 
+.servers .server-icon:hover ~ .indicator {
+  min-height: 20px;
+  border-radius: 999vh; }
+
+.servers .dm-icon:hover ~ .indicator,
+.servers .footer-icon:hover ~ .indicator {
+  scale: 1; }
+
+.servers .dm-icon ~ .indicator,
+.servers .footer-icon ~ .indicator {
+  scale: 0;
+  transition: scale 300ms; }
+
 .servers .dm-icon:hover {
   background-color: #5865f2; }
 
@@ -101,6 +121,17 @@ table {
 
 .servers .footer-icon:hover {
   background-color: #23a559; }
+
+.servers .indicator {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  translate: -57% -50%;
+  width: 10px;
+  min-height: 10px;
+  background: white;
+  border-radius: 50%;
+  transition: min-height 300ms; }
 
 .servers img {
   width: 100%;

@@ -8,20 +8,26 @@ $font-size-300: 14px;
 $font-size-200: 12px;
 $font-size-100: 10px;
 
-$servers-width: 5.5%;
-$servers-bg: #1e1f22;
 
-$dm-width: 18%;
+$servers-bg: #1e1f22;
 $dm-bg: #2b2d31;
 $dm--personal-bg: #232428;
+$dm-hover-bg: #404249;
+$main-bg: #313338;
+
+
+$servers-width: 5.5%;
+$dm-width: 18%;
+
+
 $dm--personal-height: 52px;
+$header-height: 47px;
+$dm--lists-item--pfp: 32px;
+
+
 $dm--header--input-inset: 10px;
 $dm--header--input-padding-in: 0.3rem;
 $dm--header--input-border-radius: 0.25rem;
-$dm--lists-item--pfp: 32px;
 $dm--list-item-gap: 0.5rem;
-$dm-hover-bg: #404249;
 
-$main-bg: #313338;
 
-$header-height: 47px;
