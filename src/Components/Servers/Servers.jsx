@@ -2,6 +2,7 @@ import DmIcon from "./DmIcon"
 import ServerIcon from "./ServerIcon"
 import FooterIcon from "./FooterIcon"
 import { useEffect } from "react"
+import {servers} from "./data";
 
 export default function Servers(){
 
@@ -13,7 +14,14 @@ export default function Servers(){
     return(
         <div className="servers" >
             <DmIcon />
-            <ServerIcon />
+
+            {servers.map(server => (
+                <ServerIcon 
+                    icon={server.icon}
+                    key={server.id}
+                />
+            ))}
+
             <FooterIcon />
         </div>
     )
