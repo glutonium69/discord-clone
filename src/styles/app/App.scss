@@ -302,6 +302,16 @@
                 color: $color-300;
             }
         }
+
+        &::-webkit-scrollbar {
+            width: 5px;
+            height: 0px; 
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $servers-bg;
+            border-radius: 6px; 
+        }
     }
 
     .personal{

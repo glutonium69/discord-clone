@@ -286,6 +286,14 @@ table {
   margin-left: auto;
   color: #f2f3f5; }
 
+.dm .list::-webkit-scrollbar {
+  width: 5px;
+  height: 0px; }
+
+.dm .list::-webkit-scrollbar-thumb {
+  background-color: #1e1f22;
+  border-radius: 6px; }
+
 .dm .personal {
   height: 52px;
   background-color: #232428;
