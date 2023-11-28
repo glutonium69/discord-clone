@@ -24,6 +24,7 @@ const AddServer = (
 	</svg>
 );
 
+
 const DownloadApp = (
 	<svg
 		className="circleIcon__428dd"
@@ -58,3 +59,5 @@ const Explore = (
 		></path>
 	</svg>
 );
+
+export {DmIcon, AddServer, DownloadApp, Explore};
