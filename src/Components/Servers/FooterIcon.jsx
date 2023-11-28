@@ -1,12 +1,17 @@
 import { AddServer, Explore, DownloadApp } from "./SvgIcons";
 
+let icons = [AddServer, Explore, DownloadApp]
+
 export default function FooterIcon() {
 
     return (
-        <>
-            <a href="#" className="footer-icon server-icon">{AddServer}</a>
-            <a href="#" className="footer-icon server-icon">{Explore}</a>
-            <a href="#" className="footer-icon server-icon">{DownloadApp}</a>
-        </>
+        <div>
+            {icons.map((icon, idx) => (
+                <div className="footer-icon-wrapper" key={idx}>
+                    <a href="#" className="footer-icon server-icon">{icon}</a>
+                    {icon === AddServer || <div className="indicator"></div>}
+                </div>
+            ))}
+        </div>
     );
 }
