@@ -1,6 +1,7 @@
 export default function ServerIcons() {
 
     return (
-        <div className="server-icons"></div>
+        <div className="server-icon">
+        </div>
     );
 }
