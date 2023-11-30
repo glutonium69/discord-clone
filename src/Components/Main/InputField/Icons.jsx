@@ -39,8 +39,8 @@ const Media = (
 
 const Sticker = (
 	<svg
-		width="24"
-		height="24"
+		width="20"
+		height="20"
 		className="stickerIcon_ff97e4"
 		aria-hidden="true"
 		role="img"

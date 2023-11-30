@@ -1,6 +1,6 @@
 export default function Chat() {
 
     return (
-        <div></div>
+        <div className="chats"></div>
     );
 }
