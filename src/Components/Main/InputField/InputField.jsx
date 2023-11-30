@@ -22,16 +22,16 @@ export default function InputField({handleInput, inputValue}) {
 		));
 
     return (
-        <div className="input-field">
-            <div className="img">{Media}</div>
-            <input 
-                type="text"
-                placeholder="Message He Is spiderman"
-                name="main__chat_input"
-                onChange={handleInput}
-                value={inputValue.main__chat_input}
-            />
-            {elements}
-        </div>
-    );
+			<div className="input-field">
+				<div className="img">{Media}</div>
+				<input
+					type="text"
+					placeholder="Message He Is spiderman"
+					name="main__chat_input"
+					onChange={(e) => handleInput(e)}
+					value={inputValue.main__chat_input}
+				/>
+				{elements}
+			</div>
+		);
 }

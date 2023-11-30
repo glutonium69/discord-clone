@@ -71,7 +71,7 @@ function Accessibility({handleInput, inputValue}){
                 className="input-bar" 
                 placeholder="Search"
                 name="main__header_input"
-                onChange={handleInput} 
+                onChange={(e) => handleInput(e)} 
                 value={inputValue.main__header_input}
             />
             <div className="img">{SearchIcon}</div>
