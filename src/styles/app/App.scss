@@ -465,19 +465,38 @@ input{
         }
     }
 
-        .img{
-            @include flex; 
+    .chats{
+        flex-grow: 1;
+        // background-color: rgb(187, 168, 168);
+        padding-inline: $main--chat-padding-in;
+    }
+
+    .input-field{
+        background-color: #383a40;
+        padding: 0.5rem 1rem;
+        margin-bottom: $main--chat-padding-bottom;
+        margin-inline: $main--chat-padding-in;
+        border-radius: $main--chat--input-border-radius;
+        gap: $dm--list-item-gap;
+        @include flex;
+
+        input{
+            flex-grow: 1;
+            font-size: $font-size-300;
+        }
+
+        .img:is(.emoji){
+            filter: saturate(0);
+            transition: scale 100ms;
             
             &:hover{
-                svg{
-                    color: $color-300;
-                }
+                filter: saturate(0.6);
+                scale: 1.2;
             }
         }
 
-        svg{
-            color: $color-200;
-            scale: 1;
+        .emoji{
+            font-size: 20px;
         }
     }
 }
