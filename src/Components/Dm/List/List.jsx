@@ -6,11 +6,21 @@ import { useEffect } from "react";
 export default function List() {
 
     useEffect(() => {
-        const list = document.querySelector(".list");
-        const header = document.querySelector(".header").getBoundingClientRect().height;
-        const personal = document.querySelector(".personal").getBoundingClientRect().height;
 
-        list.style.height = window.innerHeight - header - personal + "px";
+        function setLength(){
+
+            const list = document.querySelector(".list");
+            const header = document.querySelector(".header").getBoundingClientRect().height;
+            const personal = document.querySelector(".personal").getBoundingClientRect().height;
+    
+            list.style.height = window.innerHeight - header - personal + "px";
+        }
+
+        setLength();
+
+        window.addEventListener("resize",setLength)
+        return () => window.removeEventListener("resize", setLength)
+
     },[]);
 
     return (

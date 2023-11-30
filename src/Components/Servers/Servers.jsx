@@ -7,8 +7,17 @@ import {servers} from "./data";
 export default function Servers(){
 
     useEffect(() => {
-        const servers = document.querySelector(".servers");
-        servers.style.height = window.innerHeight + "px";
+        
+        function setLength(){
+            
+            const servers = document.querySelector(".servers");
+            servers.style.height = window.innerHeight + "px";
+        }
+        setLength()
+
+        window.addEventListener("resize",setLength)
+        return () => window.removeEventListener("resize", setLength)
+
     },[])
 
     return(
