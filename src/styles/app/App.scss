@@ -32,6 +32,13 @@
     
     svg{
         height: $dm--lists-item--pfp !important;
+        color: $color-200;
+    }
+
+    &:hover{
+        svg{
+            color: $color-300;
+        }
     }
 } 
 
@@ -109,6 +116,18 @@
                 @include self-center;
             }
         }
+    }
+}
+
+
+input{
+    color: $color-200;
+    border: none;
+    outline: transparent;
+    background: transparent;
+
+    &::placeholder{
+        color: $color-100;
     }
 }
 
@@ -247,18 +266,11 @@
         height: $header-height;
         
         input{
-            color: $color-200;
             inset: $dm--header--input-inset;
             border-radius: $dm--header--input-border-radius;
             padding-inline: $dm--header--input-padding-in;
             background-color: $servers-bg;
             position: absolute;
-            border: none;
-            outline: transparent;
-
-            &::placeholder{
-                color: $color-100;
-            }
         }
     }
 
@@ -446,11 +458,7 @@
 
         input{
             max-width: 130px;
-            background-color: transparent;
-            border: none;
-            outline: transparent;
             padding-inline: $dm--header--input-padding-in;
-            color: $color-200;
             transition: 300ms;
 
             &:focus{ max-width: 300px; }
