@@ -342,7 +342,7 @@ table {
   flex-grow: 1;
   background-color: #313338; }
 
-.main .img {
+.main .pfp {
   scale: 0.8; }
 
 .main .header {
@@ -405,10 +405,7 @@ table {
   height: 55%; }
 
 .main .header .input svg {
-  scale: 0.9; }
-
-.main .header .input:hover input {
-  max-width: 300px; }
+  scale: 0.7; }
 
 .main .header input {
   max-width: 130px;
@@ -419,6 +416,9 @@ table {
   color: #949ba4;
   transition: 300ms; }
 
+.main .header input:focus {
+  max-width: 300px; }
+
 .main .header .img {
   display: flex; }
 
@@ -427,4 +427,4 @@ table {
 
 .main .header svg {
   color: #949ba4;
-  scale: 1.2; }
+  scale: 1; }

@@ -369,7 +369,7 @@
     flex-grow: 1;
     background-color: $main-bg;
 
-    .img{ scale : 0.8 }
+    .pfp{ scale : 0.8; }
 
     .header{
         @include flex;
@@ -440,11 +440,7 @@
             height: 55%;
 
             svg{
-                scale: 0.9;
-            }
-
-            &:hover{
-                input{ max-width: 300px }
+                scale: 0.7;
             }
         }
 
@@ -456,6 +452,8 @@
             padding-inline: $dm--header--input-padding-in;
             color: $color-200;
             transition: 300ms;
+
+            &:focus{ max-width: 300px; }
         }
 
         .img{
@@ -470,7 +468,7 @@
 
         svg{
             color: $color-200;
-            scale: 1.2;
+            scale: 1;
         }
     }
 }
