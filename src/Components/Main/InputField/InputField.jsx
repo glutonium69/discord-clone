@@ -3,7 +3,7 @@ import { Media, Gift, Gif, Sticker, Emojis } from "./Icons"
 
 const otherIcons = [Gift, Gif, Sticker, Emojis];
 
-export default function InputField() {
+export default function InputField({handleInput, inputValue}) {
 
     const [randomEmoji, setRandomEmoji] = useState(Emojis[Math.floor(Math.random() * Emojis.length)])
 
@@ -24,7 +24,13 @@ export default function InputField() {
     return (
         <div className="input-field">
             <div className="img">{Media}</div>
-            <input type="text" placeholder="Message He Is Spiderman" />
+            <input 
+                type="text"
+                placeholder="Message He Is spiderman"
+                name="main__chat_input"
+                onChange={handleInput}
+                value={inputValue.main__chat_input}
+            />
             {elements}
         </div>
     );

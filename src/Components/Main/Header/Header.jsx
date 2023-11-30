@@ -4,12 +4,15 @@ const [Help, Inbox, PinnedMsg, SearchIcon] = CommonIcons();
 const [AddFriend, UserPfp, VideoCall, VoiceCall] = IconsInDM();
 const [MemberList, Notification, Threads] = IconsInServer();
 
-export default function Header() {
+export default function Header({handleInput, inputValue}) {
     
     return (
 			<div className="header">
 				<UserInfo />
-				<Accessibility />
+				<Accessibility 
+                    handleInput={handleInput}
+                    inputValue={inputValue}
+                />
 			</div>
 		);
 }
@@ -42,7 +45,7 @@ function UserInfo() {
     );
 }
 
-function Accessibility(){
+function Accessibility({handleInput, inputValue}){
 
     const leftIcons = (
         <>
@@ -63,7 +66,14 @@ function Accessibility(){
 
     const input = (
         <div className="input">
-            <input type="text" className="input-bar" placeholder="Search" />
+            <input 
+                type="text" 
+                className="input-bar" 
+                placeholder="Search"
+                name="main__header_input"
+                onChange={handleInput} 
+                value={inputValue.main__header_input}
+            />
             <div className="img">{SearchIcon}</div>
         </div>
     )
