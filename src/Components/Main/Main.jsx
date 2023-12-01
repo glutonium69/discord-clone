@@ -25,9 +25,11 @@ export default function Main() {
     return (
 			<div className="main">
 				<Header handleInput={handleInput} inputValue={chatInput} />
-				<Chat />
+				<div className="chat-member-wrapper">
+                    <Chat />
+                    <Members />
+                </div>
 				<InputField handleInput={handleInput} inputValue={chatInput} />
-				<Members />
 			</div>
 		);
 }
