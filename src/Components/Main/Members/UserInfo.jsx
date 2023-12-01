@@ -29,7 +29,7 @@ function Name(){
 function About(){
     return(
         <div className="about">
-            <span className="about-me">ABOUT</span>
+            <span className="about-me">ABOUT ME</span>
             <span>/text</span>
             <span className="discord-member-since">DISCORD MEMBER SINCE</span>
             <span>21 Sept 2018</span>
