@@ -1,3 +1,7 @@
+import UserInfo from "./UserInfo"
+import MutualInfo from "./MutualInfo"
+
+
 export default function Members() {
 
     return (
@@ -5,44 +9,11 @@ export default function Members() {
             <Header />
             <Badges />
             <UserInfo />
-            <AdditionalInfo />
+            <MutualInfo />
         </div>
     );
 }
 
-
-
-function UserInfo(){
-    return(
-        <div className="user-info">
-            <Name />
-            <Divider />
-            <About />
-            <Divider />
-            <Note />
-        </div>
-    )
-}
-
-
-function AdditionalInfo(){
-    return(
-        <div className="additional-info"></div>
-    )
-}
-
-
-function Badges(){
-    return(
-        <div className="badges"></div>
-    )
-}
-
-function Divider(){
-    return(
-        <div className="divider"></div>
-    )
-}
 
 function Header(){
     return(
@@ -55,32 +26,18 @@ function Header(){
     )
 }
 
-function Name(){
-    return(
-        <div className="names">
-            <span className="user-name">He is spiderman</span>
-            <span className="acc-name">master420</span>
-            <span className="pronoun">bitch, azzhole, degen</span>
-        </div>
-    )
-}
 
-function About(){
-    return(
-        <div className="about">
-            <span className="about-me">ABOUT</span>
-            <span>/text</span>
-            <span className="discord-member-since">DISCORD MEMBER SINCE</span>
-            <span>21 Sept 2018</span>
-        </div>
-    )
-}
-
-function Note(){
-    return(
-        <div className="note">
-            <span className="note">NOTE</span>
-            <input type="text" placeholder="Click to add a notes" />
-        </div>
-    )
+function Badges() {
+	return (
+		<div className="badges">
+			<img
+				src="https://cdn.discordapp.com/badge-icons/6de6d34650760ba5551a79732e98ed60.png"
+				alt=""
+			/>
+			<img
+				src="https://cdn.discordapp.com/badge-icons/011940fd013da3f7fb926e4a1cd2e618.png"
+				alt=""
+			/>
+		</div>
+	);
 }

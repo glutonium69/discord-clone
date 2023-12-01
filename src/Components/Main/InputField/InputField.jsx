@@ -26,7 +26,7 @@ export default function InputField({handleInput, inputValue}) {
 				<div className="img">{Media}</div>
 				<input
 					type="text"
-					placeholder="Message He Is spiderman"
+					placeholder="Message @He is spiderman"
 					name="main__chat_input"
 					onChange={(e) => handleInput(e)}
 					value={inputValue.main__chat_input}
