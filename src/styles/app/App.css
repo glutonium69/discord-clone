@@ -63,9 +63,7 @@ table {
   width: 32px;
   aspect-ratio: 1;
   border-radius: 50%;
-  cursor: pointer;
-  display: grid;
-  place-items: center; }
+  cursor: pointer; }
 
 .img img {
   width: 100%;
@@ -75,7 +73,7 @@ table {
 
 .img svg {
   height: 32px !important;
-  color: #d2d2d3; }
+  color: #d2d2d3e3; }
 
 .img:hover svg {
   color: #ffffff; }
@@ -88,10 +86,10 @@ table {
   bottom: 0%;
   right: 0%;
   isolation: isolate;
-  width: 50%;
+  width: 15px;
   aspect-ratio: 1;
   border-radius: 50%;
-  translate: 25% 20%;
+  translate: 5% 0%;
   overflow: hidden; }
 
 .pfp .appearance::before, .pfp .appearance::after {
@@ -101,7 +99,7 @@ table {
   aspect-ratio: 1; }
 
 .pfp .appearance::before {
-  width: 10px;
+  width: 60%;
   top: 50%;
   left: 50%;
   translate: -50% -50%; }
@@ -117,7 +115,7 @@ table {
   background: #f0b232; }
 
 .pfp .appearance[data-appearance="idle"]::after {
-  width: 9px; }
+  width: 50%; }
 
 .pfp .appearance[data-appearance="busy"]::before {
   background: #ec3e42; }
@@ -139,7 +137,7 @@ table {
   translate: -50% -50%; }
 
 input {
-  color: #d2d2d3;
+  color: #d2d2d3e3;
   border: none;
   outline: transparent;
   background: transparent; }
@@ -241,7 +239,7 @@ input::placeholder {
   min-width: 250px;
   width: 18%;
   background-color: #2b2d31;
-  color: #d2d2d3;
+  color: #d2d2d3e3;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -335,7 +333,7 @@ input::placeholder {
   font-size: 12px; }
 
 .dm .profile-info .status {
-  color: #d2d2d3; }
+  color: #d2d2d3e3; }
 
 .dm .icons {
   display: flex; }
@@ -353,10 +351,14 @@ input::placeholder {
 .main .pfp {
   scale: 0.8; }
 
+.main .appearance {
+  background-color: #313338; }
+
 .main .header {
   display: flex;
   justify-content: space-between;
-  padding-inline: 1rem; }
+  padding-inline: 1rem;
+  background-color: #313338; }
 
 .main .header .user-info,
 .main .header .view-name,
@@ -379,7 +381,7 @@ input::placeholder {
 
 .main .header .aka {
   width: fit-content;
-  color: #d2d2d3;
+  color: #d2d2d3e3;
   text-transform: uppercase;
   background-color: #2b2d31;
   border-radius: 40%;
@@ -395,7 +397,7 @@ input::placeholder {
 
 .main .header .other-names,
 .main .header .aka {
-  color: #d2d2d3;
+  color: #d2d2d3e3;
   font-size: 14px; }
 
 .main .header .accessibility {
@@ -423,8 +425,24 @@ input::placeholder {
 .main .header input:focus {
   max-width: 300px; }
 
+.main .chat-member-wrapper {
+  flex-grow: 1;
+  display: flex; }
+
+.main .members {
+  width: 350px;
+  background-color: #212121; }
+
+.main .members .appearance {
+  background-color: #212121;
+  width: 30px; }
+
+.main .members .img {
+  width: 80px; }
+
 .main .chats {
   flex-grow: 1;
+  background-color: #bba8bc;
   padding-inline: 1rem; }
 
 .main .input-field {

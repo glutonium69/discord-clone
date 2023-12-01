@@ -21,7 +21,6 @@
     aspect-ratio: 1;
     border-radius: 50%;
     cursor: pointer;
-    @include gridCenter;
     
     img{
         width: 100%;
@@ -51,10 +50,10 @@
         bottom: 0%;
         right: 0%;
         isolation: isolate;
-        width: 50%;
+        width: 15px;
         aspect-ratio: 1;
         border-radius: 50%;
-        translate: 25% 20%;
+        translate: 5% 0%;
         overflow: hidden;
 
         &::before,
@@ -66,7 +65,7 @@
         }
 
         &::before{
-            width: 10px;
+            width: 60%;
             @include self-center;
         }
 
@@ -88,7 +87,7 @@
             }
 
             &::after{
-                width: 9px;
+                width: 50%;
             }
         }
 
@@ -381,12 +380,19 @@ input{
     @include flex(1);
     justify-content: space-between;
 
-    .pfp{ scale : 0.8; }
+    .pfp{ 
+        scale : 0.8; 
+    }
+
+    .appearance{
+        background-color: $main-bg;
+    }
 
     .header{
         @include flex;
         justify-content: space-between;
         padding-inline: $main--chat-padding-in;
+        background-color: $main-bg;
 
         .user-info,
         .view-name,
@@ -465,9 +471,28 @@ input{
         }
     }
 
+    .chat-member-wrapper{
+        flex-grow: 1;
+        @include flex;
+    }
+
+    .members{
+        width: 350px;
+        background-color: #212121;
+
+        .appearance{
+            background-color: #212121;
+            width: 30px;
+        }
+
+        .img{
+            width: 80px;
+        }
+    }
+
     .chats{
         flex-grow: 1;
-        // background-color: rgb(187, 168, 168);
+        background-color: rgb(187, 168, 188);
         padding-inline: $main--chat-padding-in;
     }
 
