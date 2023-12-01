@@ -4,8 +4,10 @@ $color-100: #6f757c;
 
 $font-weight-100: 600;
 
+$font-size-xl : 18px;
 $font-size-300: 14px;
 $font-size-200: 12px;
+$font-size-s : 11px;
 $font-size-100: 10px;
 
 
@@ -22,14 +24,20 @@ $dm-width: 18%;
 
 $dm--personal-height: 52px;
 $header-height: 47px;
+$members-width: 350px;
 $dm--lists-item--pfp: 32px;
+$members-dm-pfp: 95px;
 
 
-$dm--header--input-inset: 10px;
+$chat-input-field-padding: 0.5rem 1rem;
 $dm--header--input-padding-in: 0.3rem;
-$dm--header--input-border-radius: 0.25rem;
-$main--chat--input-border-radius: 0.5rem;
-$dm--list-item-gap: 0.5rem;
 $main--chat-padding-bottom: 1.2rem;
 $main--chat-padding-in: 1rem;
+
+$dm--header--input-border-radius: 0.25rem;
+$main--chat--input-border-radius: 0.6rem;
+$members-dm-pfp-border: 0.5rem;
+
+$dm--header--input-inset: 10px;
+$dm--list-item-gap: 0.5rem;
 

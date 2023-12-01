@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700&display=swap");
+
 @import "../utilities/reset.scss";
 @import "../utilities/variable.scss";
 @import "../utilities/mixin.scss";
@@ -471,34 +473,146 @@ input{
         }
     }
 
-    .chat-member-wrapper{
-        flex-grow: 1;
+    .chat-input-members-wrapper{
         @include flex;
+        flex-grow: 1;
+    }
+
+
+    .chat-input-wrapper{
+        @include flex(1);
+        flex-grow: 1;
     }
 
     .members{
-        width: 350px;
-        background-color: #212121;
+        width: $members-width;
+        background-color: $dm--personal-bg;
+        color: $color-200;
+        padding-bottom: 1rem;
+
+        > *:not(.header){
+            margin-inline: 1rem;
+        }
+
+         
+        &,
+        *:not(.header){
+            @include flex(1);
+            gap: 1rem;
+        }
+
+        .header{
+            background-color: #375080;
+            height: 20%;
+        }
 
         .appearance{
-            background-color: #212121;
+            background-color: $dm--personal-bg;
             width: 30px;
         }
 
-        .img{
-            width: 80px;
+        .pfp{
+            width: $members-dm-pfp;
+            box-shadow: 0 0 0 $members-dm-pfp-border $dm--personal-bg;
+            align-self: flex-end;
+            translate: 0 40%;
         }
-    }
+
+
+        .badges{
+            padding: 0.2rem;
+            background: #111214;
+            align-self: flex-end;
+            border-radius: $dm--header--input-border-radius ;
+            flex-direction: row-reverse;
+            gap: 0;
+
+            img{
+                width: 22px;
+            }
+        }
+
+        .user-info,
+        .mutual-info{
+            padding: 1rem;
+            background: #111214;
+            border-radius: $main--chat--input-border-radius; 
+        }
+
+        .user-info,
+        .mutual-info{
+            font-size: $font-size-200;
+            font-weight: 500;
+            
+        }
+        
+        .names{
+            gap: $dm--list-item-gap;
+        }
+
+        .about{
+            gap: 0.8rem;
+        }
+
+        .note{
+            gap: 0;
+        }
+
+        .user-name,
+        .about-me,
+        .discord-member-since,
+        .note{
+            font-weight: $font-weight-100;
+            color: $color-300;
+        }
+
+        .user-name{
+            font-size: $font-size-xl;
+        }
+
+        .about-me,
+        .discord-member-since,
+        .note{
+            font-size: $font-size-200;
+        }
+
+        input{
+            height: $header-height;
+        }
+
+        .divider{
+            height: 1px;
+            background: rgba(255, 255, 255, 0.164);
+        }
+
+        .mutual-info{
+            position: relative;
+
+            span{
+                padding-block: 0.5rem;
+            }
+
+            &::before{
+                content: '';
+                height: 3px;
+                width: 100%;
+                background: $servers-bg;
+                @include self-center;
+                position: absolute;
+            }
+        }
+
+    }   
 
     .chats{
         flex-grow: 1;
-        background-color: rgb(187, 168, 188);
+        // background-color: rgb(187, 168, 188);
         padding-inline: $main--chat-padding-in;
     }
 
     .input-field{
         background-color: #383a40;
-        padding: 0.5rem 1rem;
+        padding: $chat-input-field-padding;
         margin-bottom: $main--chat-padding-bottom;
         margin-inline: $main--chat-padding-in;
         border-radius: $main--chat--input-border-radius;
@@ -508,6 +622,10 @@ input{
         input{
             flex-grow: 1;
             font-size: $font-size-300;
+        }
+
+        .img{
+            @include gridCenter;
         }
 
         .img:is(.emoji){
