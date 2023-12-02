@@ -43,6 +43,9 @@
     }
 } 
 
+.img:not(.pfp){
+    @include gridCenter;
+}
 
 .pfp{
     position: relative;
@@ -528,7 +531,7 @@ input{
             gap: 0;
 
             img{
-                width: 22px;
+                width: $members-dm-width;
             }
         }
 
@@ -606,8 +609,23 @@ input{
 
     .chats{
         flex-grow: 1;
-        // background-color: rgb(187, 168, 188);
         padding-inline: $main--chat-padding-in;
+        color: $color-200;
+        
+        span{
+            font-size: $font-size-300;
+        }
+
+        .chat-begin-dm{
+            .img{
+                width: $members-dm-pfp;
+                align-self: flex-start;
+            }
+
+            h1, h2{
+                color: white;
+            }
+        }
     }
 
     .input-field{
@@ -622,10 +640,6 @@ input{
         input{
             flex-grow: 1;
             font-size: $font-size-300;
-        }
-
-        .img{
-            @include gridCenter;
         }
 
         .img:is(.emoji){
