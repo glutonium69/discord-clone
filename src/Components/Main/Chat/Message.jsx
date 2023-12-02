@@ -1,7 +1,7 @@
 export default function MessageBody() {
 
     return (
-        <div className="message-container">
+        <div className="message-body">
             <SenderInfo />
             <Message />
         </div>

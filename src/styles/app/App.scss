@@ -626,6 +626,18 @@ input{
                 color: white;
             }
         }
+
+        .message-body{
+            margin-top: 4rem;
+
+            .sender-info{
+                @include flex;
+            }
+
+            .img.pfp{
+                width: 50px;
+            }
+        }
     }
 
     .input-field{
