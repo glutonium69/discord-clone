@@ -385,10 +385,6 @@ input{
     @include flex(1);
     justify-content: space-between;
 
-    .pfp{ 
-        scale : 0.8; 
-    }
-
     .appearance{
         background-color: $main-bg;
     }
@@ -398,6 +394,11 @@ input{
         justify-content: space-between;
         padding-inline: $main--chat-padding-in;
         background-color: $main-bg;
+        min-height: $header-height;
+
+        .pfp{ 
+            scale : 0.8; 
+        }
 
         .user-info,
         .view-name,
@@ -488,7 +489,7 @@ input{
     }
 
     .members{
-        width: $members-width;
+        min-width: $members-width;
         background-color: $dm--personal-bg;
         color: $color-200;
         padding-bottom: 1rem;
@@ -502,6 +503,7 @@ input{
         *:not(.header){
             @include flex(1);
             gap: 1rem;
+            display: none;
         }
 
         .header{
@@ -609,14 +611,36 @@ input{
 
     .chats{
         flex-grow: 1;
+        padding-top: 1rem;
         padding-inline: $main--chat-padding-in;
+        margin-right: 2px;
         color: $color-200;
+        height: $chat-height;
+        overflow: scroll;
+
+        &::-webkit-scrollbar-track{
+            background: rgba(0, 0, 0, 0.178);
+            border-radius: 6px;
+        }
+
+        &::-webkit-scrollbar {
+            width: 7px;
+            height: 0px; 
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $servers-bg;
+            border-radius: 6px; 
+        }
         
         span{
             font-size: $font-size-300;
         }
 
         .chat-begin-dm{
+            margin-bottom: 4rem;
+
+
             .img{
                 width: $members-dm-pfp;
                 align-self: flex-start;
@@ -628,14 +652,32 @@ input{
         }
 
         .message-body{
-            margin-top: 4rem;
+            margin-bottom: 1.5rem;
+            @include flex;
+            align-items: flex-start;
+            gap: 1rem;
 
-            .sender-info{
-                @include flex;
+            .message-info{
+                @include flex(1);
+                gap: 0.5rem;
             }
 
-            .img.pfp{
-                width: 50px;
+            .sender-name-time{
+                @include flex;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .sender-name-time{ align-items: center; }
+
+            .sender-name{ font-weight: 700; color: $color-300; }
+
+            .send-time, .send-date{ font-size: $font-size-100; margin-top: 2px; }
+
+            .message{ color: $color-300; line-height: 1.1rem; }
+
+            .img{
+                width: 40px;
             }
         }
     }
@@ -647,6 +689,8 @@ input{
         margin-inline: $main--chat-padding-in;
         border-radius: $main--chat--input-border-radius;
         gap: $dm--list-item-gap;
+        min-height: $header-height;
+        min-height: 50px;
         @include flex;
 
         input{
