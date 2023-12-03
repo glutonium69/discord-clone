@@ -1,4 +1,4 @@
-export default function MessageBody() {
+export default function MessageBody({msg}) {
 
     return (
         <div className="message-body">
@@ -7,7 +7,7 @@ export default function MessageBody() {
 
             <div className="message-info">
                 <SenderInfo />
-                <Message />
+                <Message msg={msg} />
             </div>
         </div>
     );
@@ -43,6 +43,6 @@ const SenderInfo = () => {
     )
 };
 
-const Message = () => (
-    <span className="message">nventore, ipsum explicabo accusamus nesciunt nobis illo unde laudantium, aliquam quas assumenda saepe? Temporibus fuga voluptas perspiciatis illo, neque sint accusantium pariatur quo necessitatibus, est itaque. Laboriosam voluptate, eligendi quos minima et enim temporibus qui consequuntur facere blanditiis autem perspiciatis saepe rerum! Pariatur voluptas placeat saepe perspiciatiss, est itaque. Laboriosam voluptate, eligendi quos minima et enim temporibus qui consequuntur facere blanditiis autem perspiciatis saepe rerum! Pariatur voluptas placeat saepe perspiciatiss, est itaque. Laboriosam voluptate, eligendi quos minima et enim temporibus qui consequuntur facere blanditiis autem perspiciatis saepe rerum! Pariatur voluptas placeat saepe perspiciatiss, est itaque. Laboriosam voluptate, eligendi quos minima et enim temporibus qui consequuntur facere blanditiis autem perspiciatis saepe rerum! Pariatur voluptas placeat saepe perspiciatis repudiandae quis cupiditate. Quas exercitationem assumenda cupiditate officiis aliquam dicta eligendi libero, blanditiis hic quasi aut maiores molestias? Totam, ut voluptatem excepturi tempore deserunt recusandae! Blanditiis facilis delectus veniam voluptatibus earum saepe odit, voluptates recusandae amet neque esse? Necessitatibus nisi ea facere rem culpa, eveniet autem voluptates, s, est itaque. Laboriosam voluptate, eligendi quos minima et enim temporibus qui consequuntur facere blanditiis autem perspiciatis saepe rerum! Pariatur voluptas placeat saepe perspiciatisducimus in deserunt eligendi vel, asperiores voluptas.</span>
+const Message = ({msg}) => (
+    <span className="message">{msg}</span>
 )
