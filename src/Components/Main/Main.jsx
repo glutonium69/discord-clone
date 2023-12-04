@@ -4,14 +4,25 @@ import InputField from "./InputField/InputField";
 import Members from "./Members/Members";
 import useChatInput from "./inputStateAndHandler";
 import handleChatAndChatBody from "./handleChatAndChatBody";
+import { useEffect } from "react";
 
 export default function Main() {    
 
     // function that handles the state for all inputs and returns the state variable, setState function and the handleInput function that runs at onChange event for inputs
     const { chatInput, setChatInput, handleInput } = useChatInput(); 
     // function that takes the current input state and setState function as argument and returns an array of all the messages as well as handles the scroll up of chatBody 
-    const { msgArr } = handleChatAndChatBody(chatInput, setChatInput);
+    const { msgArr, setMsgArr } = handleChatAndChatBody(chatInput, setChatInput);
 
+    useEffect(() => {
+        const storedMsgArr = localStorage.getItem("msgArr");
+        if (storedMsgArr) setMsgArr(JSON.parse(storedMsgArr));
+    },[])
+
+    useEffect(() => {
+        if(msgArr.length != 0){
+            localStorage.setItem("msgArr", JSON.stringify(msgArr))
+        }
+    },[msgArr])
 
     return (
         <div className="main">

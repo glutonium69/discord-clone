@@ -49,7 +49,7 @@ const handleChatAndChatBody = (chatInput, setChatInput) => {
 		};
 	});
 
-	return { msgArr };
+	return { msgArr, setMsgArr };
 };
 
 export default handleChatAndChatBody;
