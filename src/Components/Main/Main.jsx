@@ -2,68 +2,16 @@ import Header from "./Header/Header";
 import Chat from "./Chat/Chat";
 import InputField from "./InputField/InputField";
 import Members from "./Members/Members";
-import { useState, useEffect } from "react";
+import useChatInput from "./inputStateAndHandler";
+import handleChatAndChatBody from "./handleChatAndChatBody";
 
-export default function Main() {
+export default function Main() {    
 
-    const [chatInput, setChatInput] = useState({
-        main__chat_input: "",
-        main__header_input: "",
-    });
+    // function that handles the state for all inputs and returns the state variable, setState function and the handleInput function that runs at onChange event for inputs
+    const { chatInput, setChatInput, handleInput } = useChatInput(); 
+    // function that takes the current input state and setState function as argument and returns an array of all the messages as well as handles the scroll up of chatBody 
+    const { msgArr } = handleChatAndChatBody(chatInput, setChatInput);
 
-    function handleInput(e){
-
-        let inputName = e.target.name;
-        let inputValue = e.target.value;
-
-        setChatInput( preChatInput => ({
-            ...preChatInput,
-            [inputName]: inputValue
-        }))
-    }
-
-    const [msgArr, setMsgArr] = useState([]);
-
-    function handlePost(){
-
-        setMsgArr( pre => [...pre, chatInput.main__chat_input])
-
-        setChatInput(preChatInput => ({
-            ...preChatInput,
-            main__chat_input: ""
-        }))
-    }
-
-    function scrollChatUp(){
-        const chatBody = document.querySelector(".chats");
-
-        const chatBodyGapValue = window
-					.getComputedStyle(chatBody)
-					.getPropertyValue("gap");
-
-        const messageBodyHeight = document.querySelector(".message-body:last-of-type").getBoundingClientRect().height;
-
-        const howMuchToScroll = messageBodyHeight + parseFloat(chatBodyGapValue);
-        
-        chatBody.scrollBy(0, howMuchToScroll);
-    }
-
-    function callFunctions(e){
-        if (e.key != "Enter" || chatInput.main__chat_input === "") return;
-        if( chatInput.main__chat_input === "clear" ) { setMsgArr([]); return } // temp code to clear the chat so i dont need to refresh the page every time
-        
-        handlePost()
-        setTimeout(scrollChatUp,0);
-    }
-
-    useEffect(() => {
-
-        window.addEventListener("keydown", callFunctions)
-
-        return () => {
-            window.removeEventListener("keydown", callFunctions)
-        }
-    })
 
     return (
         <div className="main">
