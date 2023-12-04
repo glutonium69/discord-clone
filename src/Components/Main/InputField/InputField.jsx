@@ -15,7 +15,7 @@ export default function InputField({handleInput, inputValue}) {
 			<div
 				className={icon != Emojis ? "img" : "img emoji"}
 				key={idx}
-				onMouseOver={icon === Emojis && handleEmojiHover}
+				onMouseOver={icon === Emojis ? handleEmojiHover : undefined}
 			>
 				{icon != Emojis ? icon : randomEmoji}
 			</div>

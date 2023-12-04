@@ -52,4 +52,4 @@ const handleChatAndChatBody = (chatInput, setChatInput) => {
 	return { msgArr };
 };
 
-export default handleChat;
+export default handleChatAndChatBody;
