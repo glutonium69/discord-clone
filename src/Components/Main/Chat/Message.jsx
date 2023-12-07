@@ -1,7 +1,16 @@
-export default function MessageBody({msg}) {
+import { useContext } from "react";
+
+export default function MessageBody({msg, id, removeElement}) {
+
+    const test = useContext(testContext);
 
     return (
-        <div className="message-body">
+        <div 
+            className="message-body"
+            data-id={id}
+            onContextMenu={removeElement}
+        >
+
 
             <SenderPfp />
 
@@ -15,12 +24,12 @@ export default function MessageBody({msg}) {
 
 const SenderPfp = () => (
 	<div className="img-holder">
-		<div className="img">
-			<img
-				src="https://cdn.discordapp.com/avatars/845398823571947580/04e17494d7b24833f738bb09101f1a9e.webp?size=160"
-				alt=""
-			/>
-		</div>
+        <div className="img">
+            <img
+                src="https://cdn.discordapp.com/avatars/845398823571947580/04e17494d7b24833f738bb09101f1a9e.webp?size=160"
+                alt=""
+            />
+        </div>
 	</div>
 );
 
