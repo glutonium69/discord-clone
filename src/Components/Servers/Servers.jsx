@@ -3,22 +3,11 @@ import ServerIcon from "./ServerIcon"
 import FooterIcon from "./FooterIcon"
 import { useEffect } from "react"
 import {servers} from "./data";
+import setHeight from "../setHeight"
 
 export default function Servers(){
 
-    useEffect(() => {
-        
-        function setLength(){
-            
-            const servers = document.querySelector(".servers");
-            servers.style.height = window.innerHeight + "px";
-        }
-        setLength()
-
-        window.addEventListener("resize",setLength)
-        return () => window.removeEventListener("resize", setLength)
-
-    },[])
+    setHeight("servers");
 
     return(
         <div className="servers" >
