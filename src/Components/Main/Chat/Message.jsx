@@ -1,8 +1,5 @@
-import { useContext } from "react";
-
 export default function MessageBody({msg, id, removeElement}) {
 
-    const test = useContext(testContext);
 
     return (
         <div 
