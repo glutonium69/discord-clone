@@ -15,7 +15,7 @@ export default function UserInfo() {
 	const otherName = (
 		<div className="other-name">
 			<span className="aka">aka</span>
-			<span className="other-names">bitch, ass, guakamole niqqa</span>
+			<span className="other-names">bitch, ass, baby..</span>
 		</div>
 	);
 
