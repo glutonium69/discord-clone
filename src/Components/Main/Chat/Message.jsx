@@ -1,22 +1,20 @@
+import { reactions, edit, settings } from "./MessageOptionsIcons";
+
 export default function MessageBody({msg, id, removeElement}) {
 
 
     return (
-        <div 
-            className="message-body"
-            data-id={id}
-            onContextMenu={removeElement}
-        >
+			<div className="message-body" data-id={id} onContextMenu={removeElement}>
+				<SenderPfp />
 
+				<div className="message-info">
+					<SenderInfo />
+					<Message msg={msg} />
+				</div>
 
-            <SenderPfp />
-
-            <div className="message-info">
-                <SenderInfo />
-                <Message msg={msg} />
-            </div>
-        </div>
-    );
+				<MessageOptions />
+			</div>
+		);
 }
 
 const SenderPfp = () => (
@@ -52,3 +50,14 @@ const SenderInfo = () => {
 const Message = ({msg}) => (
     <span className="message">{msg}</span>
 )
+
+const MessageOptions = () => {
+
+    return (
+        <div className="message-options">
+            <div className="img">{reactions}</div>
+            <div className="img">{edit}</div>
+            <div className="img">{settings}</div>
+        </div>
+    )
+}
