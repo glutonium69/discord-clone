@@ -1,15 +1,15 @@
 import { reactions, edit, settings } from "./MessageOptionsIcons";
+import getTimeAndDate from "../../getTimeAndDate"
 
-export default function MessageBody({msg, id, removeElement}) {
-
+export default function MessageBody({msgObj, id, removeElement}) {
 
     return (
 			<div className="message-body" data-id={id} onContextMenu={removeElement}>
 				<SenderPfp />
 
 				<div className="message-info">
-					<SenderInfo />
-					<Message msg={msg} />
+                    <SenderInfo timeDate={msgObj.timeDate} />
+					<Message msg={msgObj.msg} />
 				</div>
 
 				<MessageOptions />
@@ -28,21 +28,15 @@ const SenderPfp = () => (
 	</div>
 );
 
-const SenderInfo = () => {
+const SenderInfo = ({ timeDate: {time, date} }) => {
 
-    let date = new Date();
-
-    let curr_month = date.getMonth() >= 10 ? date.getMonth() : `0${date.getMonth()}`
-    let curr_date = date.getDate() >= 10 ? date.getDate() : `0${date.getDate()}`
-    let curr_year = date.getYear() >= 10 ? date.getYear() : `0${date.getYear()}`
-    let curr_hours = date.getHours() >= 10 ? date.getHours() : `0${date.getHours()}`
-    let curr_minutes = date.getMinutes() >= 10 ? date.getMinutes() : `0${date.getMinutes()}`
+    const { currDateFull } = getTimeAndDate();
 
     return(
         <div className="sender-name-time">
             <span className="sender-name">glutonium</span>
-            <span className="send-date">{`${curr_month}/${curr_date}/${curr_year}`}</span> 
-            <span className="send-time">{`${curr_hours}:${curr_minutes}`}</span>
+            <span className="send-date">{date === currDateFull ? `Today at` : date}</span> 
+            <span className="send-time">{time}</span>
         </div>
     )
 };
