@@ -5,7 +5,7 @@ import Members from "./Members/Members";
 import useChatInput from "./inputStateAndHandler";
 import handleChatAndChatBody from "./handleChatAndChatBody";
 import storeAndGetMsg from "./storeAndGetMsg"
-import removeElement from "./removeElement";
+import removeElementFunction from "./removeElement";
 
 export default function Main() {    
 
@@ -16,12 +16,14 @@ export default function Main() {
     // function that uses useEffect to get stored msg from local storage arr at first render and then store new msg when msgArr state updates
     storeAndGetMsg(msgArr, setMsgArr);
 
+    const removeElement = removeElementFunction(setMsgArr);
+
     return (
         <div className="main">
             <Header handleInput={handleInput} inputValue={chatInput} />
             <div className="chat-input-members-wrapper">
                 <div className="chat-input-wrapper">
-                    <Chat msg={msgArr} removeElement={removeElement} />
+                    <Chat msgArr={msgArr} removeElement={removeElement} />
                     <InputField handleInput={handleInput} inputValue={chatInput} />
                 </div>
                 <Members />

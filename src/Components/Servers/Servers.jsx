@@ -1,7 +1,6 @@
 import DmIcon from "./DmIcon"
 import ServerIcon from "./ServerIcon"
 import FooterIcon from "./FooterIcon"
-import { useEffect } from "react"
 import {servers} from "./data";
 import setHeight from "../setHeight"
 
