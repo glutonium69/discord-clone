@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import getTimeAndDate from "../getTimeAndDate";
 
 const handleChatAndChatBody = (chatInput, setChatInput) => {
 
@@ -6,9 +7,22 @@ const handleChatAndChatBody = (chatInput, setChatInput) => {
 
     // updates the msgArr and sets the current input value to ""
 	function handlePost() {
-        
-		setMsgArr((pre) => [...pre, chatInput.main__chat_input]);
 
+        const { currDateFull, currTimeFull } = getTimeAndDate()
+        
+		setMsgArr((pre) => [
+			...pre,
+			{
+				id: 0,
+				timeDate: {
+					time: currTimeFull,
+					date: currDateFull,
+				},
+				msg: chatInput.main__chat_input,
+			},
+		]);
+
+        // sets the current input value to ""
 		setChatInput((preChatInput) => ({
 			...preChatInput,
 			main__chat_input: "",
@@ -16,7 +30,7 @@ const handleChatAndChatBody = (chatInput, setChatInput) => {
 	}
 
     // every msg takes up some space and there's a defined gap between every two msgs
-    // tis function makes sure when a msg is sent the element holding all chat is shifted upward based on the gap and the space the latest msg takes
+    // this function makes sure when a msg is sent the element holding all chat is shifted upward based on the gap and the space the latest msg takes
 	function scrollChatUp() {
 		const chatBody = document.querySelector(".chats");
 
