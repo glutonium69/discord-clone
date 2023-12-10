@@ -4,6 +4,7 @@ const handleChatAndChatBody = (chatInput, setChatInput) => {
 
 	const [msgArr, setMsgArr] = useState([]);
 
+    // updates the msgArr and sets the current input value to ""
 	function handlePost() {
         
 		setMsgArr((pre) => [...pre, chatInput.main__chat_input]);
@@ -14,6 +15,8 @@ const handleChatAndChatBody = (chatInput, setChatInput) => {
 		}));
 	}
 
+    // every msg takes up some space and there's a defined gap between every two msgs
+    // tis function makes sure when a msg is sent the element holding all chat is shifted upward based on the gap and the space the latest msg takes
 	function scrollChatUp() {
 		const chatBody = document.querySelector(".chats");
 
@@ -32,12 +35,10 @@ const handleChatAndChatBody = (chatInput, setChatInput) => {
 
 	function callFunctions(e) {
 		if (e.key != "Enter" || chatInput.main__chat_input === "") return;
-		if (chatInput.main__chat_input === "clear") {
-			setMsgArr([]);
-			return;
-		} // temp code to clear the chat so i don't need to refresh the page every time
 
 		handlePost();
+        // makes sure that it runs after the msg in mounted in DOM
+        // so it can access the latest msg sent
 		setTimeout(scrollChatUp, 0);
 	}
 
