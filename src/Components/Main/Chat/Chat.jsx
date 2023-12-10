@@ -8,10 +8,10 @@ export default function Chat({msgArr, removeElement}) {
         <div className="chats">
             <ChatBeginDm />
             {
-                msgArr.map( (msg,idx) => (
+                msgArr.map( (msgObj,idx) => (
                     <MessageBody 
                         key={idx} 
-                        msg={msg}
+                        msgObj={msgObj}
                         id={idx} 
                         removeElement={removeElement}
                     />
