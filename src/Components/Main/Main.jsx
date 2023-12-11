@@ -16,7 +16,7 @@ export default function Main() {
     // function that uses useEffect to get stored msg from local storage arr at first render and then store new msg when msgArr state updates
     storeAndGetMsg(msgArr, setMsgArr);
 
-    const removeElement = removeElementFunction(setMsgArr);
+    const removeElement = removeElementFunction(msgArr, setMsgArr);
 
     return (
         <div className="main">

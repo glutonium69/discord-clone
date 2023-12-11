@@ -4,12 +4,15 @@ import getTimeAndDate from "../../getTimeAndDate"
 export default function MessageBody({msgObj, id, removeElement}) {
 
     return (
-			<div className="message-body" data-id={id} onContextMenu={removeElement}>
+			<div className="message-body" data-id={id}>
 				<SenderPfp />
 
 				<div className="message-info">
-                    <SenderInfo timeDate={msgObj.timeDate} />
-					<Message msgThisMin={msgObj.msgThisMin} />
+					<SenderInfo timeDate={msgObj.timeDate} />
+					<Message
+						msgThisMin={msgObj.msgThisMin}
+						removeElement={removeElement}
+					/>
 				</div>
 			</div>
 		);
@@ -39,10 +42,10 @@ const SenderInfo = ({ timeDate: {time, date} }) => {
     )
 };
 
-const Message = ({ msgThisMin }) => (
+const Message = ({ msgThisMin, removeElement }) => (
 	<>
 		{msgThisMin.map((msg, index) => (
-			<div key={index}>
+			<div key={index} data-id={index} onContextMenu={removeElement}>
 				<span className="message">{msg}</span>
 				<MessageOptions />
 			</div>
