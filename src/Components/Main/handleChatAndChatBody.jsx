@@ -9,18 +9,17 @@ const handleChatAndChatBody = (chatInput, setChatInput) => {
 	function callFunctions(e) {
 		if (e.key != "Enter" || chatInput.main__chat_input === "") return;
 
-		handlePost(setMsgArr, chatInput);
+        const { currDateFull, currTimeFull } = getTimeAndDate()
+
+		handlePost(msgArr, setMsgArr, chatInput, currDateFull, currTimeFull);
         emptyChatInput(setChatInput);
-        // makes sure that it runs after the msg in mounted in DOM so it can access the latest msg sent
-		setTimeout(scrollChatUp, 0);
+		setTimeout(scrollChatUp, 0); // makes sure that it runs after the msg in mounted in DOM so it can access the latest msg sent
 	}
 
 	useEffect(() => {
 		window.addEventListener("keydown", callFunctions);
 
-		return () => {
-			window.removeEventListener("keydown", callFunctions);
-		};
+		return () => window.removeEventListener("keydown", callFunctions);
 	});
 
 	return { msgArr, setMsgArr };
@@ -28,21 +27,26 @@ const handleChatAndChatBody = (chatInput, setChatInput) => {
 
 
 // updates the msgArr with the new msg
-function handlePost(setMsgArr, chatInput) {
+function handlePost(msgArr, setMsgArr, chatInput, currDateFull, currTimeFull) {
 
-    const { currDateFull, currTimeFull } = getTimeAndDate()
+    let lastMsgSentAt = msgArr.at(-1)?.timeDate?.time;
     
-    setMsgArr((pre) => [
-        ...pre,
-        {
-            id: 0,
-            timeDate: {
-                time: currTimeFull,
-                date: currDateFull,
+    if(lastMsgSentAt === currTimeFull){
+        msgArr[msgArr.length - 1].msgThisMin.push(chatInput.main__chat_input);
+    }
+    else{
+        setMsgArr((pre) => [
+            ...pre,
+            {
+                id: 0,
+                timeDate: {
+                    time: currTimeFull,
+                    date: currDateFull,
+                },
+                msgThisMin: [chatInput.main__chat_input],
             },
-            msg: chatInput.main__chat_input,
-        },
-    ]);
+        ]);
+    }
 }
 
 
