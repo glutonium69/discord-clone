@@ -677,17 +677,11 @@ input{
             @include flex;
             align-items: flex-start;
             gap: 1rem;
-            position: relative;
-
-            &:hover{ 
-                background-color: $dm-bg;
-            
-                .message-options{ display: flex; }
-            }
 
             .message-info{
                 @include flex(1);
-                gap: 0.5rem;
+                width: 100%;
+                // gap: 0.5rem;
             }
 
             .sender-name-time{
@@ -702,7 +696,21 @@ input{
 
             .send-time, .send-date{ font-size: $font-size-100; margin-top: 2px; }
 
-            .message{ color: $color-300; line-height: 1.1rem; word-break: break-all;}
+            div:has(> .message){
+                width: 100%;
+                position: relative;
+                padding-block: 0.35rem;
+                margin-left: -0.5rem;
+                padding-left: 0.5rem;
+                
+                &:hover{ 
+                    background-color: $dm-bg;
+                
+                    .message-options{ display: flex; }
+                }
+            }
+
+            .message{color: $color-300; line-height: 1.1rem; word-break: break-all;}
 
             .img,
             .img-holder{

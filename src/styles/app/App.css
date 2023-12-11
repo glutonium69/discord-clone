@@ -598,19 +598,12 @@ input::placeholder {
   padding-inline: 1rem;
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
-  position: relative; }
-
-.main .chats .message-body:hover {
-  background-color: #2b2d31; }
-
-.main .chats .message-body:hover .message-options {
-  display: flex; }
+  gap: 1rem; }
 
 .main .chats .message-body .message-info {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem; }
+  width: 100%; }
 
 .main .chats .message-body .sender-name-time {
   display: flex;
@@ -627,6 +620,19 @@ input::placeholder {
 .main .chats .message-body .send-time, .main .chats .message-body .send-date {
   font-size: 10px;
   margin-top: 2px; }
+
+.main .chats .message-body div:has(> .message) {
+  width: 100%;
+  position: relative;
+  padding-block: 0.35rem;
+  margin-left: -0.5rem;
+  padding-left: 0.5rem; }
+
+.main .chats .message-body div:has(> .message):hover {
+  background-color: #2b2d31; }
+
+.main .chats .message-body div:has(> .message):hover .message-options {
+  display: flex; }
 
 .main .chats .message-body .message {
   color: #f2f3f5;

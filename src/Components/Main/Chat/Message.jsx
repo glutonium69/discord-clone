@@ -11,8 +11,6 @@ export default function MessageBody({msgObj, id, removeElement}) {
                     <SenderInfo timeDate={msgObj.timeDate} />
 					<Message msgThisMin={msgObj.msgThisMin} />
 				</div>
-
-				<MessageOptions />
 			</div>
 		);
 }
@@ -41,13 +39,16 @@ const SenderInfo = ({ timeDate: {time, date} }) => {
     )
 };
 
-const Message = ({msgThisMin}) => (
-    <>
-        {msgThisMin.map(
-            (msg, index) => <span key={index} className="message">{msg}</span>
-        )}
-    </>
-)
+const Message = ({ msgThisMin }) => (
+	<>
+		{msgThisMin.map((msg, index) => (
+			<div key={index}>
+				<span className="message">{msg}</span>
+				<MessageOptions />
+			</div>
+		))}
+	</>
+);
 
 const MessageOptions = () => {
 
