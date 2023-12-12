@@ -64,19 +64,8 @@ function emptyChatInput(setChatInput) {
 // every msg takes up some space and there's a defined gap between every two msgs
 // this function makes sure when a msg is sent the element holding all chat is shifted upward based on the gap and the space the latest msg takes
 function scrollChatUp() {
-    const chatBody = document.querySelector(".chats");
-
-    const chatBodyGapValue = window
-        .getComputedStyle(chatBody)
-        .getPropertyValue("gap");
-
-    const messageBodyHeight = document
-        .querySelector(".message-body:last-of-type")
-        .getBoundingClientRect().height;
-
-    const howMuchToScroll = messageBodyHeight + parseFloat(chatBodyGapValue);
-
-    chatBody.scrollBy(0, howMuchToScroll);
+	const chatBody = document.querySelector(".chats");
+	chatBody.scrollTop = chatBody.scrollHeight;
 }
 
 
