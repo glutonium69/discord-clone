@@ -15,9 +15,16 @@ const storeAndGetMsg = (msgArr, setMsgArr) => {
         // makes sure it doesn't run on first render
         if (msgArr.length !== 0 || !isFirstRender.current) {
             localStorage.setItem("msgArr", JSON.stringify(msgArr));
+            scrollChatUpOnLoad()
         }
         isFirstRender.current = false;
     }, [msgArr]);
+}
+
+
+function scrollChatUpOnLoad(){
+    const chatBody = document.querySelector(".chats");
+    chatBody.scrollTop = chatBody.scrollHeight;
 }
 
 export default storeAndGetMsg;
